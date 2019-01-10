@@ -1,5 +1,13 @@
 # Simple Backend API for ticketing app
 
+## To run the app on your local machine, clone the repo, cd into the cloned repo and run npm install
+
+## Go to [mlab](https://mlab.com) and create a new free database and add the url to the dev.js file(create inside config folder)
+
+## The server can be started by running 'npm start' or 'npm run server'
+
+## The routes can be tested on POSTMAN
+
 ## There are five main routes
 
 1. POST localhost:4000/api/ticket
@@ -18,8 +26,4 @@
 ### Used to fetch all tickets in the database
 
 
-## To run the app on your local machine, clone the repo, cd into the cloned repo and run npm install
 
-## The server can be started by running 'npm start' or 'npm run server'
-
-## The routes can be tested on POSTMAN
