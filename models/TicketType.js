@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const ticketTypeSchema = Schema({
-	ticketType: String
+const ticketTypeSchema = new Schema({
+	tictype: String,
+	createdAt: {
+		type: Date,
+		default: Date.now().toString()
+	}
 });
 
-mongoose.model = ('ticketType', ticketTypeSchema);
-
-module.exports = ticketTypeSchema;
+module.exports = mongoose.model('ticketTypes', ticketTypeSchema);

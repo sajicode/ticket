@@ -1,17 +1,15 @@
-const mongoose = require('mongoose');
-const Ticket = mongoose.model('tickets');
-const TicketType = mongoose.model('ticketType');
+const Ticket = require('../models/Ticket');
 
-// create ticket
 module.exports = (app) => {
+	// create ticket
+
 	app.post('/api/ticket', async (req, res) => {
-		const { event, venue, ticketType, eventDate } = req.body;
+		const { event, venue, eventDate } = req.body;
 
 		const ticket = new Ticket({
 			event,
 			venue,
-			ticketType: { ticketType },
-			eventDate: Date.now(eventDate)
+			eventDate: new Date(eventDate)
 		});
 
 		try {

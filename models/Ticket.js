@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const TicketTypeSchema = require('./TicketType');
 
 const ticketSchema = new Schema({
 	event: {
@@ -11,11 +10,14 @@ const ticketSchema = new Schema({
 		type: String,
 		required: true
 	},
-	ticketType: TicketTypeSchema,
 	eventDate: {
 		type: Date,
 		required: true
+	},
+	createdAt: {
+		type: Date,
+		default: Date.now().toString()
 	}
 });
 
-mongoose.model('tickets', ticketSchema);
+module.exports = mongoose.model('tickets', ticketSchema);
