@@ -14,10 +14,25 @@ const ticketSchema = new Schema({
 		type: Date,
 		required: true
 	},
+	ticketType: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'ticketTypes'
+	},
 	createdAt: {
 		type: Date,
 		default: Date.now().toString()
 	}
+});
+
+ticketSchema.pre('remove', function(next) {
+	let Ticket = this;
+
+	const TicketType = mongoose.model('ticketTypes');
+	TicketType.remove({
+		_id: {
+			$in: Ticket.ticketType
+		}
+	}).then(() => next());
 });
 
 module.exports = mongoose.model('tickets', ticketSchema);
