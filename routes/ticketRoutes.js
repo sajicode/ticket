@@ -29,4 +29,18 @@ module.exports = (app) => {
 			res.status(400).send(error);
 		}
 	});
+
+	// update ticket
+	app.put('/api/ticket/:id', async (req, res) => {
+		const ticketId = req.params.id;
+		let data = req.body;
+
+		const ticket = await Ticket.findByIdAndUpdate({ _id: ticketId }, { $set: data }, { new: true });
+
+		try {
+			res.status(200).send(ticket);
+		} catch (error) {
+			res.status(400).send(error);
+		}
+	});
 };
