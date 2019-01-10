@@ -27,5 +27,7 @@
 5. GET localhost:4000/api/ticket
 ### Used to fetch all tickets in the database
 
+### In postman, the eventDate should be entered in the following format `"eventDate": "2019-05-09T10:00:00"`
+
 
 
