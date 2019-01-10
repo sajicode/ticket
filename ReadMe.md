@@ -4,6 +4,8 @@
 
 ## Go to [mlab](https://mlab.com) and create a new free database and add the url to the dev.js file(create inside config folder)
 
+## Add a port to the PORT property in dev.js e.g PORT: 4000
+
 ## The server can be started by running 'npm start' or 'npm run server'
 
 ## The routes can be tested on POSTMAN
