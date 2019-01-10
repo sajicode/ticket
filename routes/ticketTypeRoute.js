@@ -21,5 +21,18 @@ module.exports = (app) => {
 		} catch (error) {
 			res.status(422).send(error);
 		}
-	});
+  });
+  
+  app.put('/api/type/:id', async (req, res) => {
+    const ticketTypeId = req.params.id;
+    let data = req.body;
+
+    const ticketType = await TicketType.findByIdAndUpdate({ _id: ticketTypeId }, { $set: data }, { new: true });
+
+    try {
+      res.status(200).send(ticketType);
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  });
 };
