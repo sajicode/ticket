@@ -5,4 +5,6 @@ const ticketTypeSchema = Schema({
 	ticketType: String
 });
 
+mongoose.model = ('ticketType', ticketTypeSchema);
+
 module.exports = ticketTypeSchema;

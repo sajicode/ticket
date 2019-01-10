@@ -12,7 +12,7 @@ const ticketSchema = new Schema({
 		required: true
 	},
 	ticketType: TicketTypeSchema,
-	Date: {
+	eventDate: {
 		type: Date,
 		required: true
 	}
